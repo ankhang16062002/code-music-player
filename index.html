@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     
+    <!-- link file css and js of materialize  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- nhúng file css  -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="main.css"> 
+
+    <!-- icons -->
+    <link rel="stylesheet" href="./assets/font/icofont/icofont.min.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.3-web/fontawesome-free-5.15.3-web/css/all.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- font-family: 'Caveat', cursive; -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Gentium+Book+Basic&family=Pacifico&display=swap" rel="stylesheet">
+    <!-- font-family: 'Gentium Book Basic', serif; -->
+
+</head>
+<body>
+    <div class="wrap-app">
+        <!-- navbar -->
+        <div id="navbar">
+            <span class="navbar-arrowdown">
+                <i class="icofont-thin-down"></i>
+            </span>
+    
+            <span class="nameOfApp">MUSIC PLAYER</span>
+    
+            <div class="listsong">
+                <i class="fas fa-bars"></i>
+            </div>
+
+        </div> 
+
+
+        <!-- ImgSongs -->
+        <div class="carousel">
+            
+        </div>
+
+
+
+        <!-- my song is play -->
+        <div class="mysongplaying">
+            <span class="mysongplaying__setTimeOut">
+                <i class="icofont-clock-time"></i>
+            </span>
+            <div class="mysongplaying__currentsong">
+                <div class="mysongplaying__currentsong-song"></div>
+                <div class="mysongplaying__currentsong-singger"></div>
+            </div>
+
+            <span class="mysongplaying__addsong">
+                <i class="icofont-download"></i>
+            </span>
+        </div>
+
+        <!-- Song tempo -->
+        <input type="range" min="0" max="100" step="1" value="0" class="input-time">
+
+
+        <!-- control button  -->
+        <div class="control-buttonsong">
+            <div class="control-buttonsong-icon control-buttonsong-icon--repeat"><span><i class="icofont-spinner-alt-3"></i></span></div>
+            <div class="control-buttonsong-icon control-buttonsong-icon--previous"><span><i class="icofont-ui-previous"></i></span></div>
+            <div class="control-buttonsong-wrap ">
+                <div class="control-buttonsong-icon big-icon"><span>
+                    <i class="icofont-ui-pause"></i>
+                    <i class="icofont-ui-play"></i>
+                </span></div>
+            </div>
+            <div class="control-buttonsong-icon control-buttonsong-icon--next"><span><i class="icofont-ui-next"></i></span></div>
+            <div class="control-buttonsong-icon control-buttonsong-icon--random"><span><i class="icofont-random"></i></span></div>
+
+        </div>
+
+
+        <!-- volume up and down   -->
+        <div class="volumn-up-and-down">
+            <span class="volumn-up-and-down__icon"><i class="icofont-volume-off"></i></span>
+            <input type="range" min="0" max="100" step="1" class="input-volumn" value="100">
+            <span class="volumn-up-and-down__icon"><i class="icofont-volume-up"></i></span>
+        </div>
+
+
+
+
+
+        <!-- ListmySong -->
+        <div class="list-my-songs">
+            <div class="list-my-songs__number" >
+                <span></span>
+            </div>
+            <div class="list-my-songs__list">
+
+            </div>
+
+            <div class="list-my-songs-close">Close</div>
+        </div>
+
+
+        <!-- overflow when select  -->
+        <div class="overflow-select"></div>
+
+        <!-- overflow setTimeOut  -->
+        <div class="overflow-settimeout"></div>
+
+
+        <!-- xử lý khi nhập thời gian phát  -->
+        <div class="setTimePause">
+            <h2 class="setTimePause__title">SetTimeOut</h2>
+            <div class="setTimePause__div">
+                <span>Hour:</span>
+                <input type="text" class="setTimePause__input--hour">
+            </div>
+
+            <div class="setTimePause__div">
+                <span>Minute:</span>
+                <input type="text" class="setTimePause__input--minute">
+            </div>
+            <div class="setTimePause__div">
+                <span>Sec:</span>
+                <input type="text" class="setTimePause__input--sec">
+            </div>
+
+            <div class="setTimePause__btn">
+                <button class="setTimePause__btn--close">Close</button>
+                <button class="setTimePause__btn--set">Set</button>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <audio src="" class="song-audio"  preload="metadata"></audio>
+
+
+
+
+    <!-- nhúng js matirialize  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" >
+        jQuery.noConflict();
+        jQuery(document).ready(function(){
+        jQuery('.carousel').carousel();
+     });
+    </script>
+
+    <script src="main.js">
+    </script>
+    
+    
+</body>
+</html>
